@@ -1,0 +1,1 @@
+const ScopeRequest=require("./ScopeRequest"),Resolver=require("./resolver/Resolver"),{initServices}=require("./services");function DsrResolver(){return this.ScopeRequest=ScopeRequest,this.Resolver=Resolver,this.initServices=initServices,this}module.exports=new DsrResolver;
