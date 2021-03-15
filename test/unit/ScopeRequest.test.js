@@ -72,7 +72,33 @@ describe('DSR Factory Tests', () => {
   });
 
   it('Should Construct DSR with known claims', () => {
-    const dsr = new ScopeRequest('abcd', ['claim-cvc:Identity:name-1']);
+    const dsr = new ScopeRequest('50faa545-0945-43de-a05b-7457929ad11f', [
+      {
+        identifier: 'credential-cvc:LiveIdDocument-v1',
+        constraints: {
+          meta: {
+            credential: 'credential-cvc:LiveIdDocument-v1',
+            issuer: {
+              is: {
+                $eq: 'did:ethr:0x1a88a35421a4a0d3e13fe4e8ebcf18e9a249dc5a',
+              },
+            },
+          },
+        },
+      },
+    ],
+    {
+      eventsURL: 'https://localhost/1234',
+      payloadURL: '',
+    },
+    {
+      id: 'a90yisRsM',
+      name: 'Cool App 1',
+      logo: 'https://dev-hosted-sip.civic.com/scopeRequest/dev/img/logo-in-testing.png',
+      description: '$name would like to access the following data on your identity',
+      primaryColor: 'A80B00',
+      secondaryColor: 'FFFFFF',
+    });
     expect(dsr).toBeDefined();
   });
 
@@ -417,7 +443,21 @@ describe('DSR Factory Tests', () => {
     const authentication = false;
     const dsr = new ScopeRequest(
       'abcd',
-      ['credential-cvc:Identity-v1'],
+      [
+        {
+          identifier: 'credential-cvc:LiveIdDocument-v1',
+          constraints: {
+            meta: {
+              credential: 'credential-cvc:LiveIdDocument-v1',
+              issuer: {
+                is: {
+                  $eq: 'did:ethr:0x1a88a35421a4a0d3e13fe4e8ebcf18e9a249dc5a',
+                },
+              },
+            },
+          },
+        },
+      ],
       validConfig.channels,
       validConfig.app,
       validConfig.partner,
