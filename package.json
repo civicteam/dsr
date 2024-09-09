@@ -7,7 +7,7 @@
   "browser": "dist/browser/index.js",
   "scripts": {
     "lint": "eslint ./src/**.js",
-    "postinstall": "npm run build",
+    "postinstall": "yarn build",
     "test": "cross-env NODE_ENV=test jest --testMatch ${TEST_FILTER:-'**/*.test.js'}",
     "test:watch": "jest --watch",
     "check-schemas": "cross-env NODE_ENV=false jest --no-coverage test/integration/schemas/",
@@ -17,13 +17,13 @@
     "build:browser:before": "BABEL_ENV=browser babel src -d dist/prebrowser",
     "build:browser:after": "minify dist/prebrowser -d dist/browser",
     "build:browser:clean": "rimraf dist/prebrowser",
-    "build:browser": "npm run build:browser:before && npm run build:browser:after && npm run build:browser:clean",
-    "build": "npm run build:browser && npm run build:cjs && npm run build:es",
+    "build:browser": "yarn build:browser:before && yarn build:browser:after && yarn build:browser:clean",
+    "build": "yarn build:browser && yarn build:cjs && yarn build:es",
     "postversion": "git add --all && git commit -m\"build and version $npm_package_version\" -m\"[skip ci]\" && git push",
     "pretag": "git fetch --tags",
     "tag": "git tag v$npm_package_version && git push origin --tags",
     "release:create": "hub release create -m v$npm_package_version v$npm_package_version",
-    "check": "npm run lint && npm run test"
+    "check": "yarn lint && yarn test"
   },
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.17.7",
