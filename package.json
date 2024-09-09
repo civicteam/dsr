@@ -7,7 +7,7 @@
   "browser": "dist/browser/index.js",
   "scripts": {
     "lint": "eslint ./src/**.js",
-    "test": "cross-env NODE_ENV=test jest",
+    "test": "cross-env NODE_ENV=test jest --testMatch ${TEST_FILTER:-'**/*.test.js'}",
     "test:watch": "jest --watch",
     "check-schemas": "cross-env NODE_ENV=false jest --no-coverage test/integration/schemas/",
     "publish-schemas": "node scripts/publishSchemas.js && aws s3 cp ./schemas/public/ $S3_BUCKET_SCHEMA_URL --recursive --acl public-read",
