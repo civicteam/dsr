@@ -50,7 +50,7 @@
     "rimraf": "^2.6.2"
   },
   "dependencies": {
-    "@civic/credential-commons": "github:civicteam/credential-commons",
+    "@identity.com/credential-commons": "3.0.2",
     "bottlejs": "^1.7.1",
     "dotenv": "^8.2.0",
     "json-stable-stringify": "^1.0.1",

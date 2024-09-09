@@ -1,4 +1,4 @@
-const { schemaLoader, CVCSchemaLoader } = require('@civic/credential-commons');
+const { schemaLoader, CVCSchemaLoader } = require('@identity.com/credential-commons');
 const { initServices } = require('../../src/services/index');
 
 jest.setTimeout(30000);

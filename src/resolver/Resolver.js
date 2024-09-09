@@ -1,5 +1,5 @@
 const sift = require('sift').default;
-const { schemaLoader } = require('@civic/credential-commons');
+const { schemaLoader } = require('@identity.com/credential-commons');
 const { VALIDATION_MODE } = require('../ScopeRequest');
 
 /**

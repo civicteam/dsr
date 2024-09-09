@@ -1,5 +1,5 @@
 const _ = require('lodash');
-const { isValidGlobalIdentifier, VCCompat: VC } = require('@civic/credential-commons');
+const { isValidGlobalIdentifier, VCCompat: VC } = require('@identity.com/credential-commons');
 
 const { services, initServices } = require('./services');
 
