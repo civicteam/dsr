@@ -7,7 +7,7 @@
   "browser": "dist/browser/index.js",
   "scripts": {
     "lint": "eslint ./src/**.js",
-    "postinstall": "yarn build",
+    "prepare": "yarn build",
     "test": "cross-env NODE_ENV=test jest --testMatch ${TEST_FILTER:-'**/*.test.js'}",
     "test:watch": "jest --watch",
     "check-schemas": "cross-env NODE_ENV=false jest --no-coverage test/integration/schemas/",
