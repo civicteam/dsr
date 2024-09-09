@@ -1,7 +1,7 @@
 const fs = require('fs');
 const Resolver = require('../../../src/resolver/Resolver');
 const {ScopeRequest} = require('../../../src/ScopeRequest');
-const {schemaLoader, CVCSchemaLoader} = require('@identity.com/credential-commons');
+const {schemaLoader, CVCSchemaLoader} = require('@civic/credential-commons');
 
 const config = {
   partner: {

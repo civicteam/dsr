@@ -1,5 +1,5 @@
 const _ = require('lodash');
-const { isValidGlobalIdentifier, VCCompat: VC } = require('@identity.com/credential-commons');
+const { isValidGlobalIdentifier, VCCompat: VC } = require('@civic/credential-commons');
 
 const { services, initServices } = require('./services');
 
@@ -100,7 +100,11 @@ class ScopeRequest {
         Object.entries(constraints.meta || {}).forEach(([key, value]) => {
           const singleMeta = _.get(_.set(_.cloneDeep(requestedItem), 'constraints.meta', { [key]: value }), 'constraints');
           if (!isValidCredentialMeta(credentialItem, singleMeta)) {
-            failedClaims.push({ credentialId: credentialItem.id, identifier: credentialItem.identifier, constraint: { path: `meta.${key}`, ...value } });
+            failedClaims.push({
+              credentialId: credentialItem.id,
+              identifier: credentialItem.identifier,
+              constraint: _.assign({ path: `meta.${key}` }, value),
+            });
           }
         });
       }

@@ -1,4 +1,4 @@
-const { schemaLoader, CVCSchemaLoader } = require('@identity.com/credential-commons');
+const { schemaLoader, CVCSchemaLoader } = require('@civic/credential-commons');
 const { initServices } = require('../../src/services/index');
 
 jest.setTimeout(30000);
@@ -364,7 +364,21 @@ describe('DSR Factory Tests', () => {
     const authentication = false;
     const dsr = await ScopeRequest.create(
       'abcd',
-      ['credential-cvc:Identity-v1'],
+      [
+        {
+          identifier: 'credential-cvc:LiveIdDocument-v1',
+          constraints: {
+            meta: {
+              credential: 'credential-cvc:LiveIdDocument-v1',
+              issuer: {
+                is: {
+                  $eq: 'did:ethr:0x1a88a35421a4a0d3e13fe4e8ebcf18e9a249dc5a',
+                },
+              },
+            },
+          },
+        },
+      ],
       validConfig.channels,
       validConfig.app,
       validConfig.partner,
@@ -392,7 +406,7 @@ describe('DSR Factory Tests', () => {
   });
 });
 
-describe('DSR Request Utils', () => {
+describe.only('DSR Request Utils', () => {
   beforeEach(() => {
     schemaLoader.addLoader(new CVCSchemaLoader());
 
