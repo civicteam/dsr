@@ -406,7 +406,7 @@ describe('DSR Factory Tests', () => {
   });
 });
 
-describe.only('DSR Request Utils', () => {
+describe('DSR Request Utils', () => {
   beforeEach(() => {
     schemaLoader.addLoader(new CVCSchemaLoader());
 
