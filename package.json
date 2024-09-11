@@ -26,10 +26,11 @@
   "devDependencies": {
     "@babel/cli": "^7.25.6",
     "@babel/plugin-transform-modules-commonjs": "^7.17.7",
+    "@babel/preset-env": "^7.25.4",
     "ajv": "^6.5.2",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
-    "babel-jest": "^27.2.4",
+    "babel-jest": "^29.7.0",
     "babel-minify": "^0.5.1",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.7.0",
@@ -84,9 +85,7 @@
     "testResultsProcessor": "./node_modules/jest-stare",
     "verbose": true,
     "transformIgnorePatterns": [
-      "/node_modules/(?!(@digitalbazaar/did-io|@digitalbazaar/lru-memoize|@digitalbazaar/ed25519-verification-key-2018|@digitalbazaar/did-io|base58-universal))",
-      "node_modules/(?!(@digitalbazaar/did-io|@digitalbazaar/lru-memoize|@digitalbazaar/ed25519-verification-key-2018|@digitalbazaar/did-io|base58-universal))",
-      "<rootDir>/node_modules/(?!(@digitalbazaar/did-io|@digitalbazaar/lru-memoize|@digitalbazaar/ed25519-verification-key-2018|@digitalbazaar/did-io|base58-universal))"
+      "/node_modules/(?!(@digitalbazaar|base58-universal|@identity.com)/)"
     ],
     "moduleNameMapper": {
       "@digitalbazaar/did-io": "@digitalbazaar/did-io/lib/main.js",
