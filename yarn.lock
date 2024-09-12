@@ -974,6 +974,38 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
+"@civic/credential-commons@0.0.1-beta.0":
+  version "0.0.1-beta.0"
+  resolved "https://registry.yarnpkg.com/@civic/credential-commons/-/credential-commons-0.0.1-beta.0.tgz#20873cb866a23b6379529f17e36ed0cb9b8e65a3"
+  integrity sha512-MmCODKUE36dCRUAPm5GVMYXEXfnAj6J3DRdXHLByl5DCk6c/FcxXZohWv6DxVZ7EolA4bDBajCWNSqxTIkYmBQ==
+  dependencies:
+    "@digitalbazaar/did-io" "^1.1.0"
+    "@identity.com/did-io-driver-sol" "^1.0.0-beta.0"
+    "@identity.com/uca" "github:identity-com/uca#v1.0.30"
+    ajv "^7.2.4"
+    ajv-formats "^1.6.1"
+    babel-runtime "^6.26.0"
+    bitcoinjs-lib "https://github.com/dabura667/bitcoinjs-lib.git#bcash330"
+    bottlejs "^1.7.1"
+    bs58 "^4.0.1"
+    dotenv "^8.6.0"
+    flat "^4.1.0"
+    json-schema-traverse "^1.0.0"
+    lodash "^4.17.21"
+    merkle-tools "^1.4.1"
+    moment-mini "^2.24.0"
+    randexp "^0.5.3"
+    randomstring "^1.2.1"
+    request "^2.88.2"
+    request-promise-native "^1.0.9"
+    sift "^13.5.4"
+    sjcl "github:civicteam/sjcl#v1.0.8-ecc"
+    tweetnacl "^1.0.3"
+    type-of-is "^3.5.1"
+    unix-timestamp "^0.2.0"
+    uuid "^3.3.2"
+    valid-url "^1.0.9"
+
 "@colors/colors@1.6.0", "@colors/colors@^1.6.0":
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/@colors/colors/-/colors-1.6.0.tgz#ec6cd237440700bc23ca23087f513c75508958b0"
@@ -1013,38 +1045,6 @@
   dependencies:
     esm "^3.2.25"
     lru-cache "^6.0.0"
-
-"@identity.com/credential-commons@3.0.2":
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/@identity.com/credential-commons/-/credential-commons-3.0.2.tgz#757f0a03f7fd3cd2f5918e6b119d1ae1c3968369"
-  integrity sha512-Rktq6yv/uOzZn0vbMxo9PTRIBkmN7VONwV+nSi8d4zXrpPjM+BQLVNOAWG/4D3EjSqTviOIPTfO2DFW41Zjz0A==
-  dependencies:
-    "@digitalbazaar/did-io" "^1.1.0"
-    "@identity.com/did-io-driver-sol" "^1.0.0-beta.0"
-    "@identity.com/uca" "github:identity-com/uca#v1.0.30"
-    ajv "^7.2.4"
-    ajv-formats "^1.6.1"
-    babel-runtime "^6.26.0"
-    bitcoinjs-lib "https://github.com/dabura667/bitcoinjs-lib.git#bcash330"
-    bottlejs "^1.7.1"
-    bs58 "^4.0.1"
-    dotenv "^8.6.0"
-    flat "^4.1.0"
-    json-schema-traverse "^1.0.0"
-    lodash "^4.17.21"
-    merkle-tools "^1.4.1"
-    moment-mini "^2.24.0"
-    randexp "^0.5.3"
-    randomstring "^1.2.1"
-    request "^2.88.2"
-    request-promise-native "^1.0.9"
-    sift "^13.5.4"
-    sjcl "github:civicteam/sjcl#v1.0.8-ecc"
-    tweetnacl "^1.0.3"
-    type-of-is "^3.5.1"
-    unix-timestamp "^0.2.0"
-    uuid "^3.3.2"
-    valid-url "^1.0.9"
 
 "@identity.com/did-io-driver-sol@^1.0.0-beta.0":
   version "1.0.0-beta.0"
