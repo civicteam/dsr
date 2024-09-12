@@ -116,6 +116,39 @@ describe('DSR Factory Tests', () => {
     expect(isValid).toBeTruthy();
   });
 
+  it('Should succeed validation of the credential items on a DSR with aggregate constraints', async () => {
+    const dsr = await ScopeRequest.create('abcd',
+      [{
+        identifier: 'credential-cvc:Identity-v1',
+        constraints: {
+          meta: {
+            issuer: { is: { $eq: 'did:ethr:0xf3beac30c498d9e26865f34fcaa57dbb935b0d74' } },
+            issued: { is: { $lt: 15999999 } },
+            expiry: { is: { $gt: 19999999 } },
+          },
+          claims: [
+            {
+              path: '$or',
+              is: [
+                {
+                  'name.first': {
+                    $eq: 'pgbXa8A3QI',
+                  },
+                },
+                {
+                  'name.last': {
+                    $gte: 'test',
+                  },
+                },
+              ],
+            },
+          ],
+        },
+      }]);
+    const isValid = ScopeRequest.validateCredentialItems(dsr.credentialItems);
+    expect(isValid).toBeTruthy();
+  });
+
   it('Should succeed validation of an string identifier for credential items on a DSR', async () => {
     const dsr = await ScopeRequest.create('abcd', ['credential-cvc:Identity-v1']);
     const isValid = ScopeRequest.validateCredentialItems(dsr.credentialItems);
@@ -1294,6 +1327,10 @@ describe('DSR Request Utils', () => {
         ],
       }]);
     expect(dsr).toBeDefined();
+  });
+
+  describe('validateConstraint', () => {
+
   });
 });
 

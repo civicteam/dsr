@@ -278,7 +278,14 @@ class ScopeRequest {
               if (_.isEmpty(claim.is)) {
                 throw new Error('Claim constraint is required');
               }
-              ScopeRequest.validateConstraint(claim.is);
+
+              if (['$or', '$nor', '$and', '$not'].includes(claim.path) && _.isArray(claim.is)) {
+                _.forEach(claim.is, (subClaim) => {
+                  _.mapValues(subClaim, ScopeRequest.validateConstraint);
+                });
+              } else {
+                ScopeRequest.validateConstraint(claim.is);
+              }
             });
           }
         }
