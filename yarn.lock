@@ -974,10 +974,10 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@civic/credential-commons@0.0.1-beta.0":
-  version "0.0.1-beta.0"
-  resolved "https://registry.yarnpkg.com/@civic/credential-commons/-/credential-commons-0.0.1-beta.0.tgz#20873cb866a23b6379529f17e36ed0cb9b8e65a3"
-  integrity sha512-MmCODKUE36dCRUAPm5GVMYXEXfnAj6J3DRdXHLByl5DCk6c/FcxXZohWv6DxVZ7EolA4bDBajCWNSqxTIkYmBQ==
+"@civic/credential-commons@0.0.1-beta.1":
+  version "0.0.1-beta.1"
+  resolved "https://registry.yarnpkg.com/@civic/credential-commons/-/credential-commons-0.0.1-beta.1.tgz#bbb4876a0e318b90b4bf0611ee723cea4b868f2b"
+  integrity sha512-5vPA4JaDyga7j557ZAk0URTJb0+U+4Ru79Dyq57pAOZRGjLJ2oSY2xADbSC14WixJ/WFAqqjHSCTLlUQzd93CA==
   dependencies:
     "@digitalbazaar/did-io" "^1.1.0"
     "@identity.com/did-io-driver-sol" "^1.0.0-beta.0"
