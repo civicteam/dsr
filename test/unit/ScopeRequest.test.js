@@ -149,6 +149,67 @@ describe('DSR Factory Tests', () => {
     expect(isValid).toBeTruthy();
   });
 
+  it('should succeed validation with a null value', async () => {
+    const dsr = await ScopeRequest.create('abcd',
+      [{
+        identifier: 'credential-cvc:Identity-v1',
+        constraints: {
+          meta: {
+            issuer: { is: { $eq: 'did:ethr:0xf3beac30c498d9e26865f34fcaa57dbb935b0d74' } },
+            issued: { is: { $lt: 15999999 } },
+            expiry: { is: { $gt: 19999999 } },
+          },
+          claims: [
+            {
+              path: 'document.issueCountry',
+              is: {
+                $nin: [
+                  'CUB',
+                  'IRN',
+                  'PRK',
+                  'SDN',
+                  'SSD',
+                  'SYR',
+                  'BLR',
+                  'CHN',
+                  'RUS',
+                ],
+              },
+            },
+            {
+              path: 'document.dateOfBirth',
+              is: {
+                $lte: '-21y',
+              },
+            },
+            {
+              path: 'document.type',
+              is: {
+                $eq: 'driving_license',
+              },
+            },
+            {
+              path: '$or',
+              is: [
+                {
+                  'document.dateOfExpiry': {
+                    $eq: null,
+                  },
+                },
+                {
+                  'document.dateOfExpiry': {
+                    $gte: 1726060618.32,
+                  },
+                },
+              ],
+            },
+          ],
+        },
+      }]);
+    const isValid = ScopeRequest.validateCredentialItems(dsr.credentialItems);
+    expect(isValid).toBeTruthy();
+  });
+
   it('Should succeed validation of an string identifier for credential items on a DSR', async () => {
     const dsr = await ScopeRequest.create('abcd', ['credential-cvc:Identity-v1']);
     const isValid = ScopeRequest.validateCredentialItems(dsr.credentialItems);

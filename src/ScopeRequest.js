@@ -170,7 +170,7 @@ class ScopeRequest {
       throw new Error(`Invalid Constraint Object - ${operatorKeys[0]} is not a valid operator`);
     }
 
-    if (_.isNil(constraint[operatorKeys[0]])) {
+    if (_.isNil(constraint[operatorKeys[0]]) && !['null', 'undefined'].includes(`${constraint[operatorKeys[0]]}`)) {
       throw new Error('Invalid Constraint Object - a constraint value is required');
     }
 
