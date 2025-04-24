@@ -1,5 +1,5 @@
 const fs = require('fs');
-const { schemaLoader, CVCSchemaLoader } = require('@identity.com/credential-commons');
+const { schemaLoader, CVCSchemaLoader } = require('@civic/credential-commons');
 const Resolver = require('../../../src/resolver/Resolver');
 const { ScopeRequest } = require('../../../src/ScopeRequest');
 

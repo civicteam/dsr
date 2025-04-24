@@ -1,4 +1,4 @@
-const { schemaLoader } = require('@identity.com/credential-commons');
+const { schemaLoader } = require('@civic/credential-commons');
 const ScopeRequest = require('./ScopeRequest');
 const Resolver = require('./resolver/Resolver');
 const { initServices } = require('./services');
